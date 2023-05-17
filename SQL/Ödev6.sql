@@ -1,9 +1,9 @@
 --Sorgu 1 --
-SELECT ROUND(AVG(rental_rate),2) as rental_rate_degerinin_ortalaması FROM film;
+SELECT ROUND(AVG(rental_rate),2) as "rental_rate degerinin ortalaması" FROM film;
 
 --Sorgu 2 --
 
-SELECT COUNT(*) as C_ile_başlayan_filmlerin_sayısı FROM film WHERE title LIKE 'C%';
+SELECT COUNT(*) as "C ile başlayan filmlerin sayısı" FROM film WHERE title LIKE 'C%';
 
 --Sorgu 3 --
 
