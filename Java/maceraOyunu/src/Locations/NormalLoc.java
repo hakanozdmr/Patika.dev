@@ -1,5 +1,11 @@
-public abstract class NormalLoc extends Location{
-    public NormalLoc(Player player,String name,int id,String info) {
+package Locations;
+
+import Locations.Location;
+
+import Player.*;
+
+public abstract class NormalLoc extends Location {
+    public NormalLoc(Player player, String name, int id, String info) {
         super(player,name,id,info);
     }
 

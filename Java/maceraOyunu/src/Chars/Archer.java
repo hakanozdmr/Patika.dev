@@ -1,4 +1,4 @@
-package Character;
+package Chars;
 
 public class Archer  extends GameChar {
     public Archer() {

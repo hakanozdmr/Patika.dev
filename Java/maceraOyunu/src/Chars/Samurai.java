@@ -1,4 +1,4 @@
-package Character;
+package Chars;
 
 public class Samurai extends GameChar {
     public Samurai() {

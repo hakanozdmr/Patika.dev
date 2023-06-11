@@ -1,6 +1,12 @@
-public class ToolStore extends NormalLoc{
+package Locations;
+
+import Player.*;
+
+import Items.*;
+
+public class ToolStore extends NormalLoc {
     public ToolStore(Player player) {
-        super(player, "Mağaza",2, "Silah veya Zırh satın alabilirsiniz");
+        super(player, "Eşya Dükkanı",2, "Silah veya Zırh satın alabilirsiniz");
     }
 
     @Override

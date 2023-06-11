@@ -1,3 +1,7 @@
+package Player;
+
+import Items.*;
+
 public class Inventory {
     private Weapon weapon;
     private Armor armor;

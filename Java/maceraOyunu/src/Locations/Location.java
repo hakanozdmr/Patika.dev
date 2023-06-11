@@ -1,4 +1,8 @@
+package Locations;
+
 import java.util.Scanner;
+
+import Player.*;
 
 public abstract class Location {
     private Player player;

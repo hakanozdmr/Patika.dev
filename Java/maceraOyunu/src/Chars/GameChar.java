@@ -1,4 +1,4 @@
-package Character;
+package Chars;
 
 public abstract class GameChar {
     private int damage;
