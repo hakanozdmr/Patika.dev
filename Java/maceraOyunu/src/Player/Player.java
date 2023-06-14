@@ -76,6 +76,23 @@ public class Player {
                         "\t Para : "+this.getMoney());
         System.out.println("###################################################################");
     }
+    public void playerInverntoryInfo(){
+        String isWater = this.getInventory().isWater() ? "var" : "yok";
+        String isFood = this.getInventory().isFood() ? "var" : "yok";
+        String isFirewood = this.getInventory().isFirewood() ? "var" : "yok";
+        System.out.println("###################################################################");
+        System.out.println(
+                "Silahınız : "+this.getInventory().getWeapon().getName()+
+                        "\t Zırhınız : "+this.getInventory().getArmor().getName()+
+                        "\t Hasarınız : "+this.getTotalDamage()+
+                        "\t Defansınız : "+this.getInventory().getArmor().getDefence()+
+                        "\t Sağlık : "+this.getHealth()+
+                        "\t Para : "+this.getMoney()+
+                        "\n Su Var mı ? : "+ isFood+
+                        "\n Yemek Var mı ? : "+isFood+
+                        "\n Odun Var mı ? : "+isFirewood);
+        System.out.println("###################################################################");
+    }
     public int getTotalDamage() {
         return damage+this.getInventory().getWeapon().getDamage();
     }

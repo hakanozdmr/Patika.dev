@@ -27,6 +27,17 @@ public abstract class BatteLoc extends Location{
         if (selectCase.equals("S")){
             if (combat(obsNumber)){
                 System.out.println(this.getName() + " tüm düşmanları yendiniz ! ");
+                if (this.award.equals("food")){
+                    this.getPlayer().getInventory().setFood(true);
+                    System.out.println("Yemek Kazandınız");
+                }else if (this.award == "water"){
+                    this.getPlayer().getInventory().setWater(true);
+                    System.out.println("Su Kazandınız");
+                }
+                else if (this.award == "firewood"){
+                    this.getPlayer().getInventory().setFirewood(true);
+                    System.out.println("Odun Kazandınız");
+                }
                 return true;
             }
         }
@@ -37,12 +48,27 @@ public abstract class BatteLoc extends Location{
         return true;
     }
     public boolean combat(int obsNumber){
+        Random r = new Random();
+        int chance = r.nextInt(2);
         for (int i = 1 ; i <= obsNumber; ++i){
             this.getObstacle().setHealth(this.getObstacle().getOrginalHealth());
             playerStats();
             obstacleStats(i);
 
                 while (this.getPlayer().getHealth() > 0 && this.getObstacle().getHealth() >0){
+                    System.out.println(chance);
+                    if (chance == 0){
+                        if (this.getObstacle().getHealth()> 0){
+                            System.out.println("Canavar Size vurdu !");
+                            int obstacleDamage = this.getObstacle().getDamage() - this.getPlayer().getInventory().getArmor().getDefence();
+                            if (obstacleDamage < 0){
+                                obstacleDamage = 0;
+                            }
+                            this.getPlayer().setHealth(this.getPlayer().getHealth()-obstacleDamage);
+                            afterHit();
+                        }
+                        chance = 1;
+                    }
                     System.out.print("<V>ur veya <K>aç : ");
                     String selectCombat = input.nextLine().toUpperCase();
                     if (selectCombat.equals("V")){

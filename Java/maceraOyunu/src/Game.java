@@ -13,8 +13,9 @@ public class Game {
         System.out.println("Kullanıcı "+player.getName() + " bu karanlık ve sisli adaya hoşgeldiniz.");
         System.out.println("Burada yaşananların hepsi gerçek!!!");
         System.out.println("Lütfen bir karakter seçiniz.");
+        System.out.println();
         player.selectChar();
-        Location location = null;
+        Location location = new Empty(player);
         while (true){
             player.playerInfo();
             Location [] loclist = {new SafeHouse(player), new ToolStore(player),new Cave(player),new Forest(player),new River(player)};
@@ -27,6 +28,7 @@ public class Game {
             }
             System.out.println("###################################################################");
             System.out.println("Lütfen Gitmek İstediğiniz Yeri Seçiniz");
+            System.out.println("Envantere Bakmak için 6 yı Seçiniz");
             int selectLoc = input.nextInt();
             switch (selectLoc){
                 case 0:
@@ -39,13 +41,32 @@ public class Game {
                     location = new ToolStore(player);
                     break;
                 case 3:
-                    location = new Cave(player);
+                    if (player.getInventory().isFood() == false){
+                        location = new Cave(player);
+                    }else {
+                        System.out.println("Burayı Temizlediniz Birdaha Giremezsiniz");
+                        location = new Empty(player);
+                    }
                     break;
                 case 4:
-                    location = new Forest(player);
+                    if (player.getInventory().isFirewood() == false){
+                        location = new Forest(player);
+                    }else {
+                        System.out.println("Burayı Temizlediniz Birdaha Giremezsiniz");
+                        location = new Empty(player);
+                    }
                     break;
                 case 5:
-                    location = new River(player);
+                    if (player.getInventory().isWater() == false){
+                        location = new River(player);
+                    }else {
+                        System.out.println("Burayı Temizlediniz Birdaha Giremezsiniz");
+                        location = new Empty(player);
+                    }
+                    break;
+                case 6:
+                    player.playerInverntoryInfo();
+                    location = new Empty(player);
                     break;
                 default:
                     System.out.println("Lütfen geçerli bir değer giriniz !");
@@ -58,7 +79,11 @@ public class Game {
                 System.out.println("GAME OVER!");
                 break;
             }
-
+            if(player.getInventory().isFood() && player.getInventory().isWater() && player.getInventory().isFirewood() ){
+                location = null;
+                System.out.println("Oyunu bitirdin tebrikler !!!");
+                break;
+            }
         }
     }
 }
