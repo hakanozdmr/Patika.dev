@@ -1,0 +1,3 @@
+enum AuthenticationStatus {
+    SUCCESS, FAIL;
+}

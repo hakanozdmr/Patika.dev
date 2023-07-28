@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/PatikaStore/PatikaStore.iml" filepath="$PROJECT_DIR$/PatikaStore/PatikaStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SigortaYonetimSistemi/SigortaYonetimSistemi.iml" filepath="$PROJECT_DIR$/SigortaYonetimSistemi/SigortaYonetimSistemi.iml" />
       <module fileurl="file://$PROJECT_DIR$/fixtureGenerator/fixtureGenerator.iml" filepath="$PROJECT_DIR$/fixtureGenerator/fixtureGenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/kitapSiraliyici/kitapSiraliyici.iml" filepath="$PROJECT_DIR$/kitapSiraliyici/kitapSiraliyici.iml" />
     </modules>
